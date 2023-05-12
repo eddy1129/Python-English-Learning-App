@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vocabulary App</title>
+</head>
+<body>
+    <h1>Vocabulary App</h1>
+    <h2>Words:</h2>
+    <ul>
+        {% for word in words %}
+        <li>{{ word }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add Word:</h2>
+    <form action="/add" method="post">
+        <label for="word">Word:</label>
+        <input type="text" id="word" name="word" required><br>
+
+        <label for="meaning">Meaning:</label>
+        <input type="text" id="meaning" name="meaning" required><br>
+
+        <input type="submit" value="Add Word">
+    </form>
+
+    <h2>Start Quiz:</h2>
+    <a href="/quiz">Start Quiz</a>
+</body>
+</html>

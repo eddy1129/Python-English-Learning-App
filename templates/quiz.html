@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vocabulary Quiz</title>
+</head>
+<body>
+    <h1>Vocabulary Quiz</h1>
+    {% if words %}
+    <form action="/quiz" method="post">
+        {% for word in words %}
+        <h2>What is the meaning of '{{ word }}'?</h2>
+        <input type="text" name="{{ word }}" required><br>
+        {% endfor %}
+        <input type="submit" value="Submit Quiz">
+    </form>
+    {% else %}
+    <p>No words available for quiz. Please add words first.</p>
+    {% endif %}
+</body>
+</html>
+
